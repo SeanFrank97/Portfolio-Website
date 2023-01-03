@@ -33,6 +33,10 @@
             font-size: 30px;
         }
 
+        h2.large {
+            font-size: 40px;
+        }
+
         .container {
             padding-left: 20px;
             padding-right: 20px;
@@ -40,10 +44,16 @@
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
-            gap: 25px;
+            gap: 50px;
             align-items: center;
 
         }
+
+        .container.alignTop {
+            align-items: flex-start;
+        }
+
+
 
         .container .col-6 {
             flex:1;
@@ -70,15 +80,6 @@
             padding-right:30px;
             padding-top: 90px;
         }
-        h3 {
-            padding: 30px 15px;
-            padding: 30px;
-        }
-        .John {
-            text-indent: 350px;
-        }
-
-
     </style>
 </head>
 <body>
@@ -121,20 +122,31 @@
 <section>
     <div class="container">
         <div class="col">
-            <img style="width: 150px; border-radius: 150px" src="https://www.menshairstylestoday.com/wp-content/uploads/2017/07/Greaser-Hairstyles-Messy-Comb-Over.jpg">
+            <h2>On Working With Me</h2>
+        </div>
+    </div>
+    <div class="container alignTop" style="padding-top: 10px;">
+        <div class="col">
+            <img style="width: 150px; border-radius: 150px" src="https://www.menshairstylestoday.com/wp-content/uploads/2017/07/Greaser-Hairstyles-Messy-Comb-Over.jpg"/>
+            <p><strong>John Baird</strong><br/><small>My Teacher</small></p>
+
         </div>
         <div class="col">
-            <h3>On Working With Me</h3>
-            <p style="text-align:right">Sean is my favorite student of all time. The amount of knowledge they have attained, and put to use in
+            <p>Sean is my favorite student of all time. The amount of knowledge they have attained, and put to use in
             the time I have taught them is astonishing. I don't think I've ever seen a more promising student before.
             I am immensely proud of my student, and I know they have a bright future ahead of them. </p>
         </div>
     </div>
 </section>
 <section>
-    <div class="John">
-            <strong>John Baird</strong>
-            <p>My Teacher</p>
+    <div class="container">
+        <div class="col-6">
+            <h2 class="large">You Can Contact<br/>Me Here</h2>
+
+        </div>
+        <div class="col-6">
+            
+        </div>
     </div>
 </section>
 </body>
