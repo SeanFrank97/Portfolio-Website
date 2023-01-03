@@ -1,13 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andika&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title>My Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+    </style>
+    <style>
+        body {
+            background-color: #eeeff1;
+            font-family: 'Andika', sans-serif;
+            color: #1a1b1f;
+            font-size: 21px;
+            font-weight: 400;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin-bottom: 16px;
+            margin-top: 16px;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+        h2 {
+            font-size: 30px;
+        }
+
+        .container {
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            gap: 25px;
+            align-items: center;
+
+        }
+
+        .container .col-6 {
+            flex:1;
+        }
+
+        .chips > span {
+            padding: 10px 16px;
+            margin: 5px;
+            border: grey 2px solid;
+            border-radius: 6px;
+            display: inline-block;
+            white-space: nowrap;
+            line-height: 100%;
+            font-family: Andale Mono, monospace;
+            font-weight: 600;
+            color: #323131;
+            font-size: 17px;
+
+
+        }
+
+        .container {
+            padding-left:30px;
+            padding-right:30px;
+            padding-top: 90px;
+        }
+        h3 {
+            padding: 30px 15px;
+            padding: 30px;
+        }
+        .John {
+            text-indent: 350px;
+        }
+
+
+    </style>
 </head>
 <body>
-<h1>Hi, I'm Sean!</h1>
-<h3>This is my first website.</h3>
-<img src="https://ca-times.brightspotcdn.com/dims4/default/a43390c/2147483647/strip/true/crop/1024x585+0+0/resize/1200x686!/quality/80/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fac%2F7d%2F2c448329cc102c93f20899f1435b%2Fla-1465272978-snap-photo" alt="Kimbo">
-<p>This is a picture of me.</p>
+<section>
+    <div class="container">
+        <div class="col">
+            <img style="width: 225px; border-radius: 15px" src="images/stockPortrait.jpg" alt="my professional image"/>
+        </div>
+        <div class="col">
+            <h1>Hi there, I'm Sean!</h1>
+            <p>I am new to the world of programming. I have a teacher that is guiding me each step
+            of the way.</p>
+        </div>
+
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="col-6">
+            <h2>My Studies So Far</h2>
+            <p>I've always had a fascination with computers.
+                I started out learning Linux and then transitioned into web development.
+                I am in the process of learning HTML, CSS, and Javascript. By the end of my studies
+                I am looking forward to having a variety of skills in which
+                I can offer my web development services.
+            </p>
+        </div>
+        <div class="col-6">
+            <div class="chips">
+                <span>Javascript</span>
+                <span>HTML/CSS</span>
+                <span>Linux Administration</span>
+                <span>Web Development</span>
+                <span>Divi Theme</span>
+                <span>Wordpress</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="col">
+            <img style="width: 150px; border-radius: 150px" src="https://www.menshairstylestoday.com/wp-content/uploads/2017/07/Greaser-Hairstyles-Messy-Comb-Over.jpg">
+        </div>
+        <div class="col">
+            <h3>On Working With Me</h3>
+            <p style="text-align:right">Sean is my favorite student of all time. The amount of knowledge they have attained, and put to use in
+            the time I have taught them is astonishing. I don't think I've ever seen a more promising student before.
+            I am immensely proud of my student, and I know they have a bright future ahead of them. </p>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="John">
+            <strong>John Baird</strong>
+            <p>My Teacher</p>
+    </div>
+</section>
 </body>
 </html>
