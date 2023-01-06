@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:text-align="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,12 +29,16 @@
         h1 {
             font-size: 50px;
         }
+
         h2 {
             font-size: 30px;
+
         }
 
         h2.large {
             font-size: 40px;
+
+
         }
 
         .container {
@@ -54,9 +58,8 @@
         }
 
 
-
         .container .col-6 {
-            flex:1;
+            flex: 1;
         }
 
         .chips > span {
@@ -76,10 +79,28 @@
         }
 
         .container {
-            padding-left:30px;
-            padding-right:30px;
+            padding-left: 30px;
+            padding-right: 30px;
             padding-top: 90px;
+
         }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 20px 15px;
+            border: none;
+            border-radius: 10px;
+
+        }
+
+        form label {
+            color: #8f929e;
+            font-size: 15px;
+
+
+        }
+
+
     </style>
 </head>
 <body>
@@ -91,7 +112,7 @@
         <div class="col">
             <h1>Hi there, I'm Sean!</h1>
             <p>I am new to the world of programming. I have a teacher that is guiding me each step
-            of the way.</p>
+                of the way.</p>
         </div>
 
     </div>
@@ -127,25 +148,44 @@
     </div>
     <div class="container alignTop" style="padding-top: 10px;">
         <div class="col">
-            <img style="width: 150px; border-radius: 150px" src="https://www.menshairstylestoday.com/wp-content/uploads/2017/07/Greaser-Hairstyles-Messy-Comb-Over.jpg"/>
+            <img style="width: 150px; border-radius: 150px"
+                 src="https://www.menshairstylestoday.com/wp-content/uploads/2017/07/Greaser-Hairstyles-Messy-Comb-Over.jpg"/>
             <p><strong>John Baird</strong><br/><small>My Teacher</small></p>
 
         </div>
         <div class="col">
             <p>Sean is my favorite student of all time. The amount of knowledge they have attained, and put to use in
-            the time I have taught them is astonishing. I don't think I've ever seen a more promising student before.
-            I am immensely proud of my student, and I know they have a bright future ahead of them. </p>
+                the time I have taught them is astonishing. I don't think I've ever seen a more promising student
+                before.
+                I am immensely proud of my student, and I know they have a bright future ahead of them. </p>
         </div>
     </div>
 </section>
 <section>
-    <div class="container">
+    <div class="container" style="border: 20px grey solid; border-radius: 25px; align-items: flex-start;">
         <div class="col-6">
-            <h2 class="large">You Can Contact<br/>Me Here</h2>
-
+            <h2 class="large" style="color:red;">You Can Contact<br/>Me Here</h2>
         </div>
         <div class="col-6">
-            
+            <form>
+                <div style="display: flex; gap:50px;">
+                    <div>
+                        <label for="name">Name</label><br>
+                        <input type="text" id="name" name="name" placeholder="Enter your name here">
+                    </div>
+                    <div>
+                        <label for="email">Email Address</label><br>
+                        <input type="text" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                </div>
+                <div>
+                    <label for="message">Message</label><br>
+                    <textarea style="width:100%; box-sizing: border-box;" id="message" name="message"
+                              rows="10" cols="50" placeholder="Enter your message"></textarea>
+                </div>
+
+            </form>
+
         </div>
     </div>
 </section>
