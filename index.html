@@ -36,7 +36,7 @@
         }
 
         h2.large {
-            font-size: 40px;
+            font-size: 55px;
 
 
         }
@@ -81,7 +81,9 @@
         .container {
             padding-left: 30px;
             padding-right: 30px;
-            padding-top: 90px;
+            padding-top: 45px;
+            padding-bottom: 45px;
+
 
         }
 
@@ -90,7 +92,15 @@
             padding: 20px 15px;
             border: none;
             border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 16.5px;
 
+
+        }
+
+        form textarea {
+            resize: vertical;
+            max-height: 200px;
         }
 
         form label {
@@ -99,6 +109,22 @@
 
 
         }
+
+        button {
+            background-color: black;
+            border-radius: 7px;
+            color: whitesmoke;
+            text-align: center;
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            padding: 12px 40px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+
 
 
     </style>
@@ -154,26 +180,26 @@
 
         </div>
         <div class="col">
-            <p>Sean is my favorite student of all time. The amount of knowledge they have attained, and put to use in
+            <p>"Sean is my favorite student of all time. The amount of knowledge they have attained, and put to use in
                 the time I have taught them is astonishing. I don't think I've ever seen a more promising student
                 before.
-                I am immensely proud of my student, and I know they have a bright future ahead of them. </p>
+                I am immensely proud of my student, and I know they have a bright future ahead of them." </p>
         </div>
     </div>
 </section>
 <section>
-    <div class="container" style="border: 20px grey solid; border-radius: 25px; align-items: flex-start;">
+    <div class="container"  style="padding-top: 90px; padding-bottom: 90px; border: 6px grey solid; border-radius: 25px; align-items: flex-start;">
         <div class="col-6">
-            <h2 class="large" style="">You Can Contact<br/>Me Here</h2>
+            <h2 class="large" style="">You Can Contact<br/>Me Here!</h2>
         </div>
         <div class="col-6">
             <form>
-                <div style="display: flex; gap:50px;">
-                    <div>
+                <div style="display: flex; gap:30px;">
+                    <div style="flex: 1;">
                         <label for="name">Name</label><br>
                         <input type="text" id="name" name="name" placeholder="Enter your name here">
                     </div>
-                    <div>
+                    <div style="flex: 1;">
                         <label for="email">Email Address</label><br>
                         <input type="text" id="email" name="email" placeholder="Enter your email">
                     </div>
@@ -181,7 +207,10 @@
                 <div>
                     <label for="message">Message</label><br>
                     <textarea style="width:100%; box-sizing: border-box;" id="message" name="message"
-                              rows="10" cols="50" placeholder="Enter your message"></textarea>
+                              rows="5" cols="50" placeholder="Enter your message"></textarea>
+                </div>
+                <div style="text-align: center;">
+                    <button type="button">Submit</button>
                 </div>
 
             </form>
