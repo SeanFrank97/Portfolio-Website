@@ -96,8 +96,47 @@
         @media (min-width: 320px) and (max-width:480px) {
             .container {
                 flex-direction: column !important;
+                gap: 25px;
             }
         }
+
+        @media (min-width: 400px) and (max-width:900px) {
+            p {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                font-size: 28px;
+            }
+
+            .chips {
+
+            }
+
+            p>strong {
+                font-size: 23px;
+
+            }
+
+            p>small {
+                font-size: 16px;
+            }
+
+            .student, .studies {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 36px;
+            }
+
+            .studies {
+                padding-top: 15px;
+            }
+
+            #contactContainer {
+
+            }
+        }
+
 
         form input, form textarea {
             width: 100%;
@@ -118,9 +157,6 @@
         form label {
             color: #8f929e;
             font-size: 15px;
-
-
-
 
         }
 
@@ -160,7 +196,7 @@
         </div>
         <div class="col">
             <h1>Hi there, I'm Sean!</h1>
-            <p>I am new to the world of programming. I have a teacher that is guiding me each step
+            <p class="first">I am new to the world of programming. I have a teacher that is guiding me each step
                 of the way.</p>
         </div>
 
@@ -170,7 +206,7 @@
     <div class="container">
         <div class="col-6">
             <h2>My Studies So Far</h2>
-            <p>I've always had a fascination with computers.
+            <p class="studies">I've always had a fascination with computers.
                 I started out learning Linux and then transitioned into web development.
                 I am in the process of learning HTML, CSS, and Javascript. By the end of my studies
                 I am looking forward to having a variety of skills in which
@@ -196,14 +232,14 @@
         </div>
     </div>
     <div class="container alignTop" style="padding-top: 10px;">
-        <div class="col">
+        <div class="col" style="align-self:center; text-align: center;">
             <img style="width: 150px; border-radius: 150px"
                  src="https://www.menshairstylestoday.com/wp-content/uploads/2017/07/Greaser-Hairstyles-Messy-Comb-Over.jpg"/>
             <p><strong>John Baird</strong><br/><small>My Teacher</small></p>
 
         </div>
         <div class="col">
-            <p>"Sean is my favorite student of all time. The amount of knowledge they have attained, and put to use in
+            <p class="student">"Sean is my favorite student of all time. The amount of knowledge they have attained, and put to use in
                 the time I have taught them is astonishing. I don't think I've ever seen a more promising student
                 before.
                 I am immensely proud of my student, and I know they have a bright future ahead of them." </p>
@@ -235,9 +271,7 @@
                 <div style="text-align: center;">
                     <button type="button">Submit</button>
                 </div>
-
             </form>
-
         </div>
     </div>
 </section>
