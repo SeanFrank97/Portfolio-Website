@@ -7,6 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Sean Frankowski's Portfolio</title>
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("esqIkYcOhQOiA3--N");
+        })();
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Andika&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
@@ -212,6 +220,17 @@
             margin-top: 90px;
         }
 
+        #contactWrapper .submissionResult {
+            display:none;
+        }
+
+        #contactWrapper.success .submissionResult {
+            display:block;
+        }
+
+        #contactWrapper.success form {
+            display:none;
+        }
 
     </style>
 </head>
@@ -278,29 +297,53 @@
         <div class="col-6">
             <h2 class="large" style="">You Can Contact<br/>Me Here!</h2>
         </div>
-        <div class="col-6">
-            <form>
+        <div id="contactWrapper" class="col-6 success">
+            <form action="/" onsubmit="sendEmail(); return false;">
                 <div class="formRow">
                     <div style="flex: 1;">
                         <label for="name">Name</label><br>
-                        <input type="text" id="name" name="name" placeholder="Enter your name here">
+                        <input type="text" id="name" name="name" placeholder="Enter your name here" required>
                     </div>
                     <div style="flex: 1;">
                         <label for="email">Email Address</label><br>
-                        <input type="text" id="email" name="email" placeholder="Enter your email">
+                        <input type="text" id="email" name="email" placeholder="Enter your email" required>
                     </div>
                 </div>
                 <div>
                     <label for="message">Message</label><br>
                     <textarea style="width:100%; box-sizing: border-box;" id="message" name="message"
-                              rows="5" cols="50" placeholder="Enter your message"></textarea>
+                              rows="5" cols="50" placeholder="Enter your message" required></textarea>
                 </div>
                 <div style="text-align: center;">
-                    <button type="button">Submit</button>
+                    <input type="submit">
                 </div>
             </form>
+            <p class="submissionResult">Thank you for your submission</p>
         </div>
     </div>
 </section>
+<script type="text/javascript">
+    function sendEmail() {
+
+        let emailData = {};
+
+        emailData.name = document.getElementById('name').value;
+        emailData.email = document.getElementById('email').value;
+        emailData.message = document.getElementById('message').value;
+
+        // ANYTHING YOU WANT
+       // alert('Hello, ' + emailData.name + '!')
+
+        emailjs.send("service_8dyuc4k","template_02m3crf",{
+            from_name: emailData.name,
+            reply_to: emailData.email,
+            message: emailData.message,
+        });
+
+
+
+    }
+
+</script>
 </body>
 </html>
