@@ -11,7 +11,7 @@
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
     </script>
     <script type="text/javascript">
-        (function(){
+        (function () {
             emailjs.init("esqIkYcOhQOiA3--N");
         })();
     </script>
@@ -95,6 +95,17 @@
 
         }
 
+        input[type="submit"] {
+            font-size: 20px;
+            cursor: pointer;
+            font-family: "Calisto MT";
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(189, 188, 188);
+            box-shadow: 1px 2px 5px darkgrey;
+        }
+
         #intro img {
             width: 350px;
             border-radius: 15px
@@ -104,20 +115,21 @@
             #intro img {
                 width: 100%;
             }
+
             h1, h2 {
                 text-align: center;
             }
+
             #contactContainer {
                 align-items: stretch !important;
             }
         }
 
 
-
         @media (min-width: 600px) {
             .formRow {
                 display: flex;
-                gap:30px;
+                gap: 30px;
             }
         }
 
@@ -128,14 +140,14 @@
 
         }
 
-        @media (max-width:768px) {
+        @media (max-width: 768px) {
             .container {
                 flex-direction: column !important;
                 gap: 25px;
             }
         }
 
-        @media (min-width: 400px) and (max-width:900px) {
+        @media (min-width: 400px) and (max-width: 900px) {
             p {
                 margin-top: 5px;
                 margin-bottom: 5px;
@@ -146,12 +158,12 @@
 
             }
 
-            p>strong {
+            p > strong {
                 font-size: 23px;
 
             }
 
-            p>small {
+            p > small {
                 font-size: 16px;
             }
 
@@ -209,6 +221,16 @@
             margin-top: 15px;
         }
 
+        .submissionResult {
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .submissionResult.failed > span {
+            border-bottom: 2px black solid;
+            font-size: 25px;
+        }
+
 
         #contactContainer {
             padding-top: 90px;
@@ -221,16 +243,32 @@
         }
 
         #contactWrapper .submissionResult {
-            display:none;
+            display: none;
         }
 
-        #contactWrapper.success .submissionResult {
-            display:block;
+        #contactWrapper.success .submissionResult.succeeded {
+            display: block;
+            font-size: 30px;
+            vertical-align: center;
+
         }
 
-        #contactWrapper.success form {
-            display:none;
+        #contactWrapper.failure .submissionResult.failed {
+            display: block;
         }
+
+        #contactWrapper.success form,
+        #contactWrapper.failure form {
+            display: none;
+
+        }
+
+        #contactWrapper.success,
+        #contactWrapper.failure {
+            align-self: center;
+        }
+
+
 
     </style>
 </head>
@@ -243,7 +281,9 @@
         <div class="col">
             <h1>Hi there, I'm Sean!</h1>
             <p class="first">I am new to the world of programming. I have a teacher that is guiding me each step
-                of the way. I am currently working on building my portfolio by experimenting with different programming languages and projects. My ultimate goal is to become proficient in multiple programming languages and develop my own applications.</p>
+                of the way. I am currently working on building my portfolio by experimenting with different programming
+                languages and projects. My ultimate goal is to become proficient in multiple programming languages and
+                develop my own applications.</p>
         </div>
 
     </div>
@@ -285,7 +325,8 @@
 
         </div>
         <div class="col">
-            <p class="student">"Sean is my favorite student of all time. The amount of knowledge they have attained, and put to use in
+            <p class="student">"Sean is my favorite student of all time. The amount of knowledge they have attained, and
+                put to use in
                 the time I have taught them is astonishing. I don't think I've ever seen a more promising student
                 before.
                 I am immensely proud of my student, and I know they have a bright future ahead of them." </p>
@@ -293,11 +334,11 @@
     </div>
 </section>
 <section>
-    <div class="container"  id="contactContainer">
+    <div class="container" id="contactContainer">
         <div class="col-6">
             <h2 class="large" style="">You Can Contact<br/>Me Here!</h2>
         </div>
-        <div id="contactWrapper" class="col-6 success">
+        <div id="contactWrapper" class="col-6">
             <form action="/" onsubmit="sendEmail(); return false;">
                 <div class="formRow">
                     <div style="flex: 1;">
@@ -315,15 +356,21 @@
                               rows="5" cols="50" placeholder="Enter your message" required></textarea>
                 </div>
                 <div style="text-align: center;">
-                    <input type="submit">
+                    <input id="contactSubmitBtn" type ="submit">
                 </div>
             </form>
-            <p class="submissionResult">Thank you for your submission</p>
+            <p class="submissionResult succeeded">&#x1f496; Thank you for your submission! &#x1f496;</p>
+            <p class="submissionResult failed" >&#128577; <span>Sorry, there was an error!</span> &#128577;
+                <br> You can contact me here sean@seanfrankowski.me</p>
+
         </div>
     </div>
 </section>
 <script type="text/javascript">
     function sendEmail() {
+        document.getElementById('contactSubmitBtn').disabled = true
+        document.getElementById('contactSubmitBtn').value = 'Hold your horses...'
+
 
         let emailData = {};
 
@@ -332,15 +379,21 @@
         emailData.message = document.getElementById('message').value;
 
         // ANYTHING YOU WANT
-       // alert('Hello, ' + emailData.name + '!')
+        // alert('Hello, ' + emailData.name + '!')
 
-        emailjs.send("service_8dyuc4k","template_02m3crf",{
+        emailjs.send("service_8dyuc4k", "template_02m3crf", {
             from_name: emailData.name,
             reply_to: emailData.email,
             message: emailData.message,
+        }).then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+            document.getElementById("contactWrapper").classList.add("success");
+        }, function (error) {
+            document.getElementById("contactWrapper").classList.add("failure");
+            console.log('FAILED...', error);
         });
 
-
+       //
 
     }
 
